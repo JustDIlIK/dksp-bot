@@ -15,10 +15,8 @@ async def get_moderator_main_keyboard():
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="Получить отчет")],
-            [KeyboardButton(text="Пользователи")],
-            [KeyboardButton(text="Роли")],
-            [KeyboardButton(text="Типы товаров")],
-            [KeyboardButton(text="Техники")],
+            [KeyboardButton(text="Пользователи"), KeyboardButton(text="Роли")],
+            [KeyboardButton(text="Типы товаров"), KeyboardButton(text="Техники")],
         ],
         resize_keyboard=True,
     )
