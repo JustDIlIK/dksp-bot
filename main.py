@@ -20,7 +20,8 @@ async def main():
     bot = Bot(token=settings.BOT_TOKEN)
     print("Starting")
 
-    await dp.start_polling(bot)
+    await dp.start_polling(bot, polling_timeout=60,
+    close_bot_session=True)
 
 
 if __name__ == "__main__":
