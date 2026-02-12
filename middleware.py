@@ -21,7 +21,7 @@ class AuthMiddleware(BaseMiddleware):
         print(f"{user=}")
 
         if not user:
-            await event.answer(f"Вы не зарегистрированы. Ваш ID - {event.telegram_id}")
+            await event.answer(f"Вы не зарегистрированы. Ваш ID - {telegram_id}")
             return
 
         data["user"] = user
