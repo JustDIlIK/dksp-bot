@@ -1,5 +1,6 @@
 from aiogram import Router
 from aiogram.filters import CommandStart
+from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
 from db.models import Role
@@ -11,9 +12,9 @@ router = Router()
 
 
 @router.message(CommandStart())
-async def start_handler(message: Message, user):
+async def start_handler(message: Message, user, state: FSMContext):
     role: Role = await RoleRepository.get_by_id(user.role_id)
-
+    await state.clear()
     if role.title == "user":
         keyboard = await get_main_keyboard()
         await message.answer(
