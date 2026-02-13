@@ -38,7 +38,7 @@ async def start(message: Message, state: FSMContext):
 @router.message(Form.tool, F.text)
 async def get_toll(message: Message, state: FSMContext):
 
-    tool = await ToolRepository.get_by_variable(title=int(message.text))
+    tool = await ToolRepository.get_by_variable(title=message.text)
 
     if not tool:
         await message.answer("Выбрали несуществующий тип")
