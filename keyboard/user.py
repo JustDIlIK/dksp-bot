@@ -14,7 +14,7 @@ async def get_main_keyboard():
 
 async def get_save_keyboard():
     keyboard = ReplyKeyboardMarkup(
-        keyboard=[[KeyboardButton(text="Сохранить")]], resize_keyboard=True
+        keyboard=[[KeyboardButton(text="Сохранить")], [KeyboardButton(text="Отмена")]], resize_keyboard=True
     )
 
     return keyboard
